@@ -1,0 +1,26 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class MyFrame extends JFrame {
+	public MyFrame() {
+		setSize(500, 500);
+		setVisible(true);
+	}
+	
+	class MyPanel extends JPanel {
+		JLabel avata = new JLabel("@");
+		public MyPanel() {
+			setLayout(null);
+			avata.setSize(50, 50);
+			avata.setLocation(100, 100);
+			add(avata);
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+
+}

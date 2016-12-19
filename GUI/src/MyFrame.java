@@ -60,6 +60,8 @@ public class MyFrame extends JFrame {
 					if(eng.equals("")) {
 						engText.setText("plz input text"); return;
 					}
+					if(kor == null) korText.setText("cannot find value");
+					else korText.setText(kor);
 					String kor = dic.get(eng);
 					korText.setText(kor);
 					System.out.println(korText.getText());

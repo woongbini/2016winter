@@ -1,0 +1,47 @@
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class MyFrame extends JFrame {
+	public MyFrame() {
+		setSize(500, 500);
+		setContentPane(new MyPanel());
+		setVisible(true);
+		getContentPane().requestFocus();
+	}
+	
+	class MyPanel extends JPanel {
+		JLabel avata = new JLabel("¤Ì¤Ì");
+		public MyPanel() {
+			setLayout(null);
+			avata.setSize(50, 50);
+			avata.setLocation(100, 100);
+			add(avata);
+			
+			this.addKeyListener(new KeyAdapter() {
+				@Override
+				public void keyPressed(KeyEvent e) {
+					int code = e.getKeyCode();
+					switch (code) {
+					case KeyEvent.VK_DOWN : avata.setLocation(avata.getX(), avata.getY()+10);
+					case KeyEvent.VK_UP : avata.setLocation(avata.getX(), avata.getY()-10);
+					case KeyEvent.VK_RIGHT : avata.setLocation(avata.getX()+10, avata.getY());
+					case KeyEvent.VK_LEFT : avata.setLocation(avata.getX()-10, avata.getY());
+					default:
+						break;
+						
+					} //end switch
+				}//end keyPressed
+			});
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+
+}
