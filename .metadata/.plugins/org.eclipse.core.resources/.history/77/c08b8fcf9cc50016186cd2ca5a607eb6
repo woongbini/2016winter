@@ -17,7 +17,6 @@ public class MyFrame extends JFrame {
 	
 	class MyPanel extends JPanel {
 		JLabel avata = new JLabel("ㅜㅜ");
-		Monster mon = new Monster("MM");
 		public MyPanel() {
 			setLayout(null);
 			avata.setSize(50, 50);
@@ -75,35 +74,8 @@ public class MyFrame extends JFrame {
 
 }
 
-class Monster extends JLabel implements Runnable {
-	JLabel avata;
-	public Monster(String text) {
-		//상속받았기 때문에 super클래스에 넘겨준다. 
-		super(text);
-		this.avata = avata;
-		Thread th = new Thread(this);
-		th.start();
-	}
+class Monster {
 	
-	public void run() {
-		while(true) {
-			try {
-				Thread.sleep(300);
-				int x = avata.getX();
-				int y = avata.getY();
-				int xMon = this.getX();
-				int yMon = this.getY();
-				if(x < xMon) xMon -=10;
-				else xMon += 10;
-				if(y < yMon) yMon -=10;
-				else yMon += 10;
-				this.setLocation(xMon, yMon);
-				
-			} catch (InterruptedException e) {
-				
-			}
-		}
-	}
 }
 
 

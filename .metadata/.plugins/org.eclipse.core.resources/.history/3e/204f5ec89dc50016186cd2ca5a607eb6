@@ -82,26 +82,12 @@ class Monster extends JLabel implements Runnable {
 		super(text);
 		this.avata = avata;
 		Thread th = new Thread(this);
-		th.start();
+		//th.start();
 	}
 	
 	public void run() {
 		while(true) {
-			try {
-				Thread.sleep(300);
-				int x = avata.getX();
-				int y = avata.getY();
-				int xMon = this.getX();
-				int yMon = this.getY();
-				if(x < xMon) xMon -=10;
-				else xMon += 10;
-				if(y < yMon) yMon -=10;
-				else yMon += 10;
-				this.setLocation(xMon, yMon);
-				
-			} catch (InterruptedException e) {
-				
-			}
+			
 		}
 	}
 }
