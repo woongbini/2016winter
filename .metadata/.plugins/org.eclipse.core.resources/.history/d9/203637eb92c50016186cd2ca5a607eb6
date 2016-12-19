@@ -1,0 +1,7 @@
+import java.util.HashMap;
+
+public class MyDic {
+	HashMap<String, String> map = new HashMap<String, String>();
+	public MyDic() { }
+}
+	
