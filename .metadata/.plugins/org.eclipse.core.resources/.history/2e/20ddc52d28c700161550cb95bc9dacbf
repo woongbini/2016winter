@@ -1,0 +1,18 @@
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame {
+	public MyFrame() { 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(300, 300);
+		Container c = getContentPane();
+		c.setLayout(null);
+		
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+	
+}

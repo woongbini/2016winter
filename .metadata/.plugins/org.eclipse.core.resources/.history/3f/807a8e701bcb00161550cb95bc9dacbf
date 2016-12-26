@@ -1,0 +1,13 @@
+import javax.swing.JFrame;
+
+public class PushServer extends JFrame {
+	
+	public PushServer() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new PushServer();
+	}
+
+}

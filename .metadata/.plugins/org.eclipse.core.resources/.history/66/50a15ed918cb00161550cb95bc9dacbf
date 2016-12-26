@@ -1,0 +1,34 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class PushClient extends JFrame {
+	private Receiver text = new Receiver();
+	private JButton startBtn = new JButton("START");
+	
+	public PushClient() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.add(new JLabel("CLIENT"), BorderLayout.NORTH);
+		c.add(new JScrollPane(text), BorderLayout.CENTER);
+		c.add((text), BorderLayout.SOUTH);
+		setSize(400, 400);
+		setVisible(true);
+	}
+
+	private class Receiver extends JTextArea implements Runnable {
+		
+		public void run() {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		new PushClient();
+	}
+}

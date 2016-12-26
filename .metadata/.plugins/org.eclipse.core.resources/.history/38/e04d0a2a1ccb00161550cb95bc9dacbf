@@ -1,0 +1,37 @@
+import java.awt.Container;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class PushServer extends JFrame {
+	private MyTextField text = new MyTextField(10);
+	private JLabel clientCount = new JLabel("0");
+	private JLabel deliveredCount = new JLabel("0");
+	
+	public PushServer() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		c.add(new JLabel("TEXT"));
+		c.add(text);
+		c.add(new JLabel("jubsok jasoo"));
+		c.add(clientCount);
+		c.add(new JLabel("junsong jasoo"));
+		c.add(deliveredCount);
+		setSize(400, 400);
+		setVisible(true);
+	}
+	
+	private class MyTextField extends JTextField {
+		private MyTextField(int size) {
+			super(size);
+		}
+	}
+	
+	public static void main(String[] args) {
+		new PushServer();
+	}
+
+}

@@ -1,0 +1,58 @@
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class PushServer extends JFrame {
+	private MyTextField text = new MyTextField(10);
+	private JLabel clientCount = new JLabel("0");
+	private JLabel deliveredCount = new JLabel("0");
+	private JTextArea clientList = new JTextArea(7, 40);
+	
+	public PushServer() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		c.add(new JLabel("TEXT"));
+		c.add(text);
+		c.add(new JLabel("JubSok JaSoo:"));
+		c.add(clientCount);
+		c.add(new JLabel("JunSong JaSoo:"));
+		c.add(deliveredCount);
+		c.add(new JScrollPane(clientList));
+		
+		setSize(400, 400);
+		setVisible(true);
+		
+		startService();
+	}
+	
+	private void startService() {
+		new ServerThread().start();
+	}
+
+	class ServerThread extends Thread {
+		public void run() {
+			ServerSocket listener = null;
+			Socket socket = null;
+			
+		}
+	}
+	
+	private class MyTextField extends JTextField {
+		private MyTextField(int size) {
+			super(size);
+		}
+	}
+	
+	public static void main(String[] args) {
+		new PushServer();
+	}
+
+}

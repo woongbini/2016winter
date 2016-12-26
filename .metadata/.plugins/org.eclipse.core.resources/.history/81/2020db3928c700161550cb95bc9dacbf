@@ -1,0 +1,30 @@
+import java.awt.Container;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MyFrame extends JFrame {
+	public MyFrame() { 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(300, 300);
+		Container c = getContentPane();
+		c.setLayout(null);
+		
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+	
+}
+
+class MyLabel extends JLabel {
+	int maxBarSize;
+	public MyLabel(int maxBarSize) {
+		this.maxBarSize = maxBarSize;
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+	}
+}
